@@ -11,6 +11,11 @@ app.post('/', (req, res) => {
  res.send("We'll post to this endpoint")
 })
 
+app.put('/update', (req, res) => {
+   res.send('We update data here baby!')
+
+});
+
 const port = 3000;
 
 app.listen(port, () => {
