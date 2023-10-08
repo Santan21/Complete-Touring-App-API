@@ -36,7 +36,7 @@ app.get("/api/v1/tours/:id", getAllTours);
 
 
 
-const CreateTours = (req, res) => {
+const createTours = (req, res) => {
   //console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;
   const newTour = Object.assign({ id: newId }, req.body);
@@ -50,7 +50,7 @@ const CreateTours = (req, res) => {
     });
   });
 }
-app.post("/api/v1/tours", CreateTours);
+app.post("/api/v1/tours", createTours);
 
 
 
