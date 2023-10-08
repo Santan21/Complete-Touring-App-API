@@ -3,17 +3,8 @@ const express = require("express");
 const app = express();
 const filePath =
   "/Users/mac/Desktop/Backend Engineering/Touring App API/assets/data/tours-simple.json";
-app.use(express.json());
 
-//app.get("/", (req, res) => {
-//  res.status(200).json({ message: "This is the server", app: "Touring App" });
-//});
-//app.post("/", (req, res) => {
-//  res.send("We'll post to this endpoint");
-//});
-//app.put("/update", (req, res) => {
-//  res.send("We update data here baby!");
-//});
+app.use(express.json());
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 app.get("/api/v1/tours", (req, res) => {
   res.status(200).json({
@@ -25,7 +16,7 @@ app.get("/api/v1/tours", (req, res) => {
   });
 });
 
-app.get("/api/v1/tours/:id", (req, res) => {
+const getAllTours = (req, res) => {
   console.log(req.params);
   const id = req.params.id * 1;
   const tour = tours.find((el) => el.id === id);
@@ -40,7 +31,9 @@ app.get("/api/v1/tours/:id", (req, res) => {
     status: "Success",
     data: { tour },
   });
-});
+}; 
+app.get("/api/v1/tours/:id", getAllTours);
+
 
 app.post("/api/v1/tours", (req, res) => {
   //console.log(req.body);
