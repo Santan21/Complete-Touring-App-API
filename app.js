@@ -47,11 +47,7 @@ const createTours = (req, res) => {
     });
   });
 };
-app.post("/api/v1/tours", createTours);
-app.get("/api/v1/tours", getAllTours);
-app.get("/api/v1/tours/:id", getTours);
-
-app.patch("/api/v1/tours/:id", (req, res) => {
+const UpdateTours = (req, res) => {
   if (req.params.id * 1 > tours.length) {
     return res.status(404).json({
       status: "fail",
@@ -64,7 +60,11 @@ app.patch("/api/v1/tours/:id", (req, res) => {
       tour: "<Updated Tour>",
     },
   });
-});
+}
+app.post("/api/v1/tours", createTours);
+app.get("/api/v1/tours", getAllTours);
+app.get("/api/v1/tours/:id", getTours);
+app.patch("/api/v1/tours/:id", UpdateTours);
 
 app.delete("/api/v1/tours/:id", (req, res) => {
   if (req.params.id * 1 > tours.length) {
