@@ -6,7 +6,8 @@ const filePath =
 
 app.use(express.json());
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-app.get("/api/v1/tours", (req, res) => {
+
+const getAllTours = (req, res) => {
   res.status(200).json({
     status: "Success",
     data: {
@@ -14,14 +15,14 @@ app.get("/api/v1/tours", (req, res) => {
       tours,
     },
   });
-});
+};
 
-const getAllTours = (req, res) => {
+const getTours = (req, res) => {
   console.log(req.params);
   const id = req.params.id * 1;
   const tour = tours.find((el) => el.id === id);
   //if (id > tours.length) {
-    if (!tour) {
+  if (!tour) {
     return res.status(404).json({
       status: "fail",
       message: "Invalid ID",
@@ -31,11 +32,7 @@ const getAllTours = (req, res) => {
     status: "Success",
     data: { tour },
   });
-}; 
-app.get("/api/v1/tours/:id", getAllTours);
-
-
-
+};
 const createTours = (req, res) => {
   //console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;
@@ -49,36 +46,36 @@ const createTours = (req, res) => {
       },
     });
   });
-}
+};
 app.post("/api/v1/tours", createTours);
+app.get("/api/v1/tours", getAllTours);
+app.get("/api/v1/tours/:id", getTours);
 
-
-app.patch('/api/v1/tours/:id', (req,res) => {
-  if ( req.params.id * 1 > tours.length) {
+app.patch("/api/v1/tours/:id", (req, res) => {
+  if (req.params.id * 1 > tours.length) {
     return res.status(404).json({
       status: "fail",
       message: "Invalid ID",
     });
   }
   res.status(200).json({
-    status: 'success',
+    status: "success",
     data: {
-      tour: '<Updated Tour>'
-    }
+      tour: "<Updated Tour>",
+    },
   });
 });
 
-
-app.delete('/api/v1/tours/:id', (req,res) => {
-  if ( req.params.id * 1 > tours.length) {
+app.delete("/api/v1/tours/:id", (req, res) => {
+  if (req.params.id * 1 > tours.length) {
     return res.status(404).json({
       status: "fail",
       message: "Invalid ID",
     });
   }
   res.status(200).json({
-    status: 'success',
-    data: null
+    status: "success",
+    data: null,
   });
 });
 
