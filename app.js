@@ -53,7 +53,6 @@ const createTours = (req, res) => {
 app.post("/api/v1/tours", createTours);
 
 
-
 app.patch('/api/v1/tours/:id', (req,res) => {
   if ( req.params.id * 1 > tours.length) {
     return res.status(404).json({
