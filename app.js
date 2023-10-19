@@ -75,11 +75,19 @@ const deleteTour = (req, res) => {
 }
 //app.post('/api/v1/tours', createTours);
 //app.get('/api/v1/tours', getAllTours);
-app.get('/api/v1/tours/:id', getTours);
-app.patch('/api/v1/tours/:id', updateTour);
-app.delete('/api/v1/tours/:id', deleteTour);
+//app.get('/api/v1/tours/:id', getTours);
+//app.patch('/api/v1/tours/:id', updateTour);
+//app.delete('/api/v1/tours/:id', deleteTour);
 
-app.route('/api/v1/tours').get(getAllTours).post(createTours)
+app
+.route('/api/v1/tours')
+.get(getAllTours)
+.post(createTours);
+
+app
+.route('/api/v1/tours/:id')
+.get(getTours).patch(updateTour)
+.delete(deleteTour);
 
 
 const port = 3000;
