@@ -5,7 +5,11 @@ const filePath =
   "/Users/mac/Desktop/BE/Touring App API/assets/data/tours-simple.json";
 
 app.use(express.json());
-app.use((req, res, next));
+
+app.use((req, res, next) => {
+  console.log('Middleware here');
+  next();
+});
 
 
 
@@ -95,7 +99,7 @@ app
 .delete(deleteTour);
 
 
-const port = 4000;
+const port = 3001;
 app.listen(port, () => {
   console.log("App running on port ${port}.... ");
 });
