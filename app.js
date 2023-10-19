@@ -2,7 +2,7 @@ const fs = require("fs");
 const express = require("express");
 const app = express();
 const filePath =
-  "/Users/mac/Desktop/Backend Engineering/Touring App API/assets/data/tours-simple.json";
+  "/Users/mac/Desktop/BE/Touring App API/assets/data/tours-simple.json";
 
 app.use(express.json());
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
@@ -73,11 +73,13 @@ const deleteTour = (req, res) => {
     data: null,
   });
 }
-app.post("/api/v1/tours", createTours);
-app.get("/api/v1/tours", getAllTours);
-app.get("/api/v1/tours/:id", getTours);
-app.patch("/api/v1/tours/:id", updateTour);
-app.delete("/api/v1/tours/:id", deleteTour);
+//app.post('/api/v1/tours', createTours);
+//app.get('/api/v1/tours', getAllTours);
+app.get('/api/v1/tours/:id', getTours);
+app.patch('/api/v1/tours/:id', updateTour);
+app.delete('/api/v1/tours/:id', deleteTour);
+
+app.route('/api/v1/tours').get(getAllTours).post(createTours)
 
 
 const port = 3000;
