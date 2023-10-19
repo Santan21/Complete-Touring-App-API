@@ -5,6 +5,11 @@ const filePath =
   "/Users/mac/Desktop/BE/Touring App API/assets/data/tours-simple.json";
 
 app.use(express.json());
+app.use((req, res, next));
+
+
+
+
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 const getAllTours = (req, res) => {
@@ -90,7 +95,7 @@ app
 .delete(deleteTour);
 
 
-const port = 3000;
+const port = 4000;
 app.listen(port, () => {
   console.log("App running on port ${port}.... ");
 });
