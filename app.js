@@ -11,9 +11,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 const getAllTours = (req, res) => {
@@ -97,7 +94,6 @@ app
 .route('/api/v1/tours/:id')
 .get(getTours).patch(updateTour)
 .delete(deleteTour);
-
 
 const port = 3001;
 app.listen(port, () => {
