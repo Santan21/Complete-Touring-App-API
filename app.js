@@ -1,9 +1,12 @@
-const fs = require("fs");
-const express = require("express");
-const app = express();
+const fs = require('fs');
+const express = require('express');
+const morgan = require('morgan');
 const filePath =
   "/Users/mac/Desktop/BE/Touring App API/assets/data/tours-simple.json";
 
+const app = express();
+
+//MIDDLEWARES HERE
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -17,6 +20,8 @@ app.use((req, res, next) => {
 })
 
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
+//ROUTE HANDLERS HERE
 
 const getAllTours = (req, res) => {
   res.status(200).json({
@@ -91,6 +96,7 @@ const deleteTour = (req, res) => {
 //app.patch('/api/v1/tours/:id', updateTour);
 //app.delete('/api/v1/tours/:id', deleteTour);
 
+//ROUTES HERE
 app
 .route('/api/v1/tours')
 .get(getAllTours)
@@ -101,6 +107,7 @@ app
 .get(getTours).patch(updateTour)
 .delete(deleteTour);
 
+//SERVER
 const port = 3001;
 app.listen(port, () => {
   console.log("App running on port ${port}.... ");
