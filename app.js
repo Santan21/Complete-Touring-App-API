@@ -11,11 +11,17 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  req.requestTime = new Date(). toISOString();
+  next();
+})
+
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 const getAllTours = (req, res) => {
   res.status(200).json({
     status: "Success",
+    requestedAt: req.requestTime,
     data: {
       results: tours.length,
       tours,
