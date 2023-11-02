@@ -113,6 +113,7 @@ const getUsers = (req, res) => {
    message: 'this route is not defined yet'
   })
 };
+
 const updateUser = (req, res) => {
   res.status(500).json({
    status: 'error',
@@ -126,9 +127,6 @@ const deleteUser = (req, res) => {
    message: 'this route is not defined yet'
   })
 };
-
-
-
 
 //ROUTES - TOURS
 
