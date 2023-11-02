@@ -1,7 +1,7 @@
 [
   {
     "_id": "5c8a1d5b0190b214360dc057",
-    "name": "Jonas Schmedtmann",
+    "name": "Alexander Jones",
     "email": "admin@natours.io",
     "role": "admin",
     "active": true,
@@ -19,7 +19,7 @@
   },
   {
     "_id": "5c8a1e1a2f8fb814b56fa182",
-    "name": "Sophie Louise Hart",
+    "name": "Leslie Gyamfi",
     "email": "sophie@example.com",
     "role": "user",
     "active": true,
@@ -28,7 +28,7 @@
   },
   {
     "_id": "5c8a1ec62f8fb814b56fa183",
-    "name": "Ayla Cornell",
+    "name": "Emily Goetzler",
     "email": "ayls@example.com",
     "role": "user",
     "active": true,
@@ -37,7 +37,7 @@
   },
   {
     "_id": "5c8a1f292f8fb814b56fa184",
-    "name": "Leo Gillespie",
+    "name": "Leonard DiCaprio",
     "email": "leo@example.com",
     "role": "guide",
     "active": true,
@@ -46,7 +46,7 @@
   },
   {
     "_id": "5c8a1f4e2f8fb814b56fa185",
-    "name": "Jennifer Hardy",
+    "name": "Kwame Gyamfi",
     "email": "jennifer@example.com",
     "role": "guide",
     "active": true,
