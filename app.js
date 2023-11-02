@@ -92,11 +92,16 @@ const deleteTour = (req, res) => {
     data: null,
   });
 }
-//app.post('/api/v1/tours', createTours);
-//app.get('/api/v1/tours', getAllTours);
-//app.get('/api/v1/tours/:id', getTours);
-//app.patch('/api/v1/tours/:id', updateTour);
-//app.delete('/api/v1/tours/:id', deleteTour);
+
+const getAllUsers = (req, res) => {
+     res.status(500).json({
+      status: 'error',
+      message: 'this route is not defined yet'
+     })
+};
+
+
+
 
 //ROUTES - TOURS
 
