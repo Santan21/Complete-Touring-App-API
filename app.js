@@ -153,8 +153,6 @@ app.route('/api/v1/users/:id')
 .patch(updateUser)
 .delete(deleteUser);
 
-
-
 //SERVER
 const port = 3001;
 app.listen(port, () => {
