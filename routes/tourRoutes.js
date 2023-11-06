@@ -1,6 +1,10 @@
-const express = require('express')
+const express = require('express');
+
+const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 const getAllTours = (req, res) => {
+    console.log(req.requestTime);
+
     res.status(200).json({
       status: "Success",
       requestedAt: req.requestTime,
@@ -67,8 +71,7 @@ const getAllTours = (req, res) => {
       data: null,
     });
   }
-
-const tourRouter = express.Router();
+const router = express.Router();
 
 tourRouter
 .route('/')

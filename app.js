@@ -21,20 +21,7 @@ app.use((req, res, next) => {
   next();
 })
 
-const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
-//ROUTE HANDLERS HERE
-
-
-
-
-
-//ROUTES - TOURS
-
-
-
-
-//ROUTES - USERS
 
 app.use('/api/v1/tours', tourRouter)
 app.use('/api/v1/users', userRouter)

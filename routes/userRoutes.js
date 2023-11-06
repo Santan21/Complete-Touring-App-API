@@ -1,5 +1,4 @@
 const express = require('express');
-
 const getAllUsers = (req, res) => {
     res.status(500).json({
      status: 'error',
@@ -35,7 +34,7 @@ const deleteUser = (req, res) => {
  })
 };
 
-const userRouter = express.Router();
+const router = express.Router();
 
 userRouter
 .route('/')
@@ -46,3 +45,5 @@ userRouter.route('/:id')
 .get(getUsers)
 .patch(updateUser)
 .delete(deleteUser);
+
+module.exports = router
