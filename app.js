@@ -144,7 +144,6 @@ tourRouter
 .delete(deleteTour);
 
 //ROUTES - USERS
-
 userRouter
 .route('/')
 .get(getAllUsers)
