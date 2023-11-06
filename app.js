@@ -27,40 +27,7 @@ const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 
 
-const getAllUsers = (req, res) => {
-     res.status(500).json({
-      status: 'error',
-      message: 'this route is not defined yet'
-     })
-};
 
-const createUser = (req, res) => {
-  res.status(500).json({
-   status: 'error',
-   message: 'this route is not defined yet'
-  })
-};
-
-const getUsers = (req, res) => {
-  res.status(500).json({
-   status: 'error',
-   message: 'this route is not defined yet'
-  })
-};
-
-const updateUser = (req, res) => {
-  res.status(500).json({
-   status: 'error',
-   message: 'this route is not defined yet'
-  })
-};
-
-const deleteUser = (req, res) => {
-  res.status(500).json({
-   status: 'error',
-   message: 'this route is not defined yet'
-  })
-};
 
 //ROUTES - TOURS
 
