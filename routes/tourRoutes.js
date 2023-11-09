@@ -1,4 +1,8 @@
 const express = require('express');
+const fs = require('fs');
+const filePath =
+  "/Users/mac/Desktop/BE/Touring App/assets/data/tours-simple.json";
+  
 
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 

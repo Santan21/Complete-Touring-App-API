@@ -1,8 +1,5 @@
-const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
-const filePath =
-  "/Users/mac/Desktop/BE/Touring App API/assets/data/tours-simple.json";
 
 const tourRouter = require('./routes/tourRoutes.js')
 const userRouter = require('./routes/userRoutes.js')
