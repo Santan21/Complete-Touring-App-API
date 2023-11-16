@@ -1,4 +1,6 @@
 const fs = require('fs');
+const tourRouter = require('../routes/tourRoutes');
+const filePath = "/Users/mac/Desktop/BE/Touring App/assets/data/tours-simple.json";
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 exports.getAllTours = (req, res) => {
@@ -70,3 +72,4 @@ exports.getAllTours = (req, res) => {
       data: null,
     });
   }
+  
