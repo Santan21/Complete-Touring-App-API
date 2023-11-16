@@ -29,7 +29,7 @@ const deleteUser = (req, res) => {
   message: 'this route is not defined yet'
  })
 };
-const router = express.Router();
+const userRouter = express.Router();
 
 userRouter
 .route('/')
@@ -41,4 +41,4 @@ userRouter.route('/:id')
 .patch(updateUser)
 .delete(deleteUser);
 
-module.exports = router
+module.exports = userRouter

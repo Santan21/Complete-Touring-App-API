@@ -2,7 +2,6 @@ const express = require('express');
 const fs = require('fs');
 const filePath =
   "/Users/mac/Desktop/BE/Touring App/assets/data/tours-simple.json";
-  
 
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
@@ -75,7 +74,7 @@ const getAllTours = (req, res) => {
       data: null,
     });
   }
-const router = express.Router();
+const tourRouter = express.Router();
 
 tourRouter
 .route('/')
@@ -88,4 +87,4 @@ tourRouter
 .patch(updateTour)
 .delete(deleteTour);
 
-module.exports = router;
+module.exports = tourRouter;
