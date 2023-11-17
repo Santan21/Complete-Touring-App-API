@@ -1,7 +1,7 @@
 {
   "name": "complete-touring-app-api",
   "version": "1.0.0",
-  "description": "experimenting node, express, and moongoDB",
+  "description": "experimenting node, express, and mongoDB",
   "main": "app.js",
   "scripts": {
     "start": "nodemon server.js"
