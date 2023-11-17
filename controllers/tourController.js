@@ -14,14 +14,6 @@ exports.checkID = (req, res, next, val) => {
   next();
 };
 
-exports.checkbody = (req, res, next, val) => {
-  req.body = JSON.stringify(val);
-  req.status(200).json({
-    message: ''
-    
-  });
-};
-
 exports.getAllTours = (req, res) => {
     console.log(req.requestTime);
 
@@ -34,7 +26,7 @@ exports.getAllTours = (req, res) => {
       },
     });
   };
-  
+
   exports.getTours = (req, res) => {
     console.log(req.params);
     const id = req.params.id * 1;
@@ -45,6 +37,7 @@ exports.getAllTours = (req, res) => {
       data: { tour },
     });
   };
+
   exports.createTours = (req, res) => {
     //console.log(req.body);
     const newId = tours[tours.length - 1].id + 1;
@@ -59,6 +52,7 @@ exports.getAllTours = (req, res) => {
       });
     });
   };
+
   exports.updateTour = (req, res) => {
     res.status(200).json({
       status: "success",
@@ -67,6 +61,7 @@ exports.getAllTours = (req, res) => {
       },
     });
   }
+  
   exports.deleteTour = (req, res) => {
     res.status(200).json({
       status: "success",
