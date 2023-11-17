@@ -3,6 +3,15 @@ const tourRouter = require('../routes/tourRoutes');
 const filePath = "/Users/mac/Desktop/BE/Touring App/assets/data/tours-simple.json";
 const tours = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
+exports.checkID = (req, res, next, val) => {
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+}
+
 exports.getAllTours = (req, res) => {
     console.log(req.requestTime);
 
@@ -61,12 +70,6 @@ exports.getAllTours = (req, res) => {
     });
   }
   exports.deleteTour = (req, res) => {
-    if (req.params.id * 1 > tours.length) {
-      return res.status(404).json({
-        status: "fail",
-        message: "Invalid ID",
-      });
-    }
     res.status(200).json({
       status: "success",
       data: null,
