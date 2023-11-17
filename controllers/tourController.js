@@ -14,6 +14,14 @@ exports.checkID = (req, res, next, val) => {
   next();
 };
 
+exports.checkbody = (req, res, next, val) => {
+  req.body = JSON.stringify(val);
+  req.status(200).json({
+    message: ''
+    
+  });
+};
+
 exports.getAllTours = (req, res) => {
     console.log(req.requestTime);
 
