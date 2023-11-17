@@ -10,7 +10,9 @@ exports.checkID = (req, res, next, val) => {
       message: "Invalid ID",
     });
   }
-}
+
+  next();
+};
 
 exports.getAllTours = (req, res) => {
     console.log(req.requestTime);
