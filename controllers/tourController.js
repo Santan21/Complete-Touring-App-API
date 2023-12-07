@@ -22,7 +22,6 @@ exports.checkBody = (req, res, next) => {
   });
 };
 
-
 exports.getAllTours = (req, res) => {
     console.log(req.requestTime);
 
