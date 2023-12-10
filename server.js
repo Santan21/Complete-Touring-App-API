@@ -22,10 +22,8 @@ mongoose
     name: {
       type: 'string',
       required: true,
-
     },
     rating: Number,
-    
     price: {
       type: 'number',
       required: true
