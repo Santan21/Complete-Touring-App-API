@@ -18,6 +18,12 @@ mongoose
   .then(() =>
     console.log('DB Connection Successful'));
 
+  const tourSchema = new mongoose.Schema({
+    name: String,
+    rating: Number,
+    price: Number
+  });
+
 //SERVER
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
