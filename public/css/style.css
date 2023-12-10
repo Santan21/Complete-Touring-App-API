@@ -1115,7 +1115,8 @@ body {
     from(#7dd56f),
     to(#28b487)
   );
-  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-image: linear-gradient(to right bottom,   #178edb,#178edb
+  );
   opacity: 0.7;
 }
 .card__picture-img {
@@ -1133,7 +1134,7 @@ body {
 }
 .card__sub-heading {
   font-size: 1.2rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 700;
   grid-column: 1 / -1;
 }
@@ -1159,7 +1160,7 @@ body {
 .card__icon {
   height: 2rem;
   width: 2rem;
-  fill: #55c57a;
+  fill:  #178edb;
 }
 .card__footer {
   background-color: #f7f7f7;
