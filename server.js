@@ -19,9 +19,17 @@ mongoose
     console.log('DB Connection Successful'));
 
   const tourSchema = new mongoose.Schema({
-    name: String,
+    name: {
+      type: 'string',
+      required: true,
+
+    },
     rating: Number,
-    price: Number
+    
+    price: {
+      type: 'number',
+      required: true
+    }
   });
 
 //SERVER
