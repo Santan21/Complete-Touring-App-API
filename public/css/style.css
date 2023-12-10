@@ -219,7 +219,7 @@ body {
 
 .btn:focus {
   outline: none;
-  background-color:  #178edb;
+  background-color: #2e864b;
 }
 
 .btn--white {
@@ -231,7 +231,7 @@ body {
 }
 
 .btn--green {
-  background-color:  #178edb
+  background-color:   #178edb
 
   ;
   color: #fff;
